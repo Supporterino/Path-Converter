@@ -1,4 +1,3 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import './App.css';
 
@@ -144,14 +143,8 @@ ${printWin(path)}
       </div>
     </div>
   );
-};
+}
 
 export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<FilePathClipboard />} />
-      </Routes>
-    </Router>
-  );
+  return <FilePathClipboard />;
 }
