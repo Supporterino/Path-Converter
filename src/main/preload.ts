@@ -1,6 +1,11 @@
 // Disable no-unused-vars, broken for spread args
 /* eslint no-unused-vars: off */
-import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron';
+import {
+  contextBridge,
+  ipcRenderer,
+  clipboard,
+  IpcRendererEvent,
+} from 'electron';
 
 export type Channels = 'ipc-example';
 
@@ -24,6 +29,12 @@ const electronHandler = {
   },
 };
 
+const clipboardHandler = {
+  writeText: (text: string) => clipboard.writeText(text),
+};
+
 contextBridge.exposeInMainWorld('electron', electronHandler);
+contextBridge.exposeInMainWorld('clipboard', clipboardHandler);
 
 export type ElectronHandler = typeof electronHandler;
+export type ClipboardHandler = typeof clipboardHandler;
