@@ -25,12 +25,14 @@ function IconButton({
   textColor,
 }: {
   onClick: () => void;
+  // eslint-disable-next-line react/require-default-props
   disabled?: boolean;
   icon: React.ReactNode;
   bgColor: string;
   textColor: string; // e.g. "bg-blue-600"
 }) {
   return (
+    // eslint-disable-next-line react/button-has-type
     <button
       onClick={onClick}
       disabled={disabled}

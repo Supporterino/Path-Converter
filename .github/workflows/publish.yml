@@ -2,12 +2,15 @@ name: Publish
 
 on:
   push:
-    branches:
-      - main
+    tags: [ '[0-9]+.[0-9]+.[0-9]+' ]
 
 jobs:
   publish:
     runs-on: ${{ matrix.os }}
+
+    permissions:
+      contents: write
+      packages: write
 
     strategy:
       matrix:
