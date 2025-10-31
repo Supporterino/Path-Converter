@@ -1,7 +1,7 @@
 {
   "name": "path-converter",
   "description": "A simple tool to convert paths from MacOS style to Windows style and vice versa",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "author": {
     "name": "Supporterino",
